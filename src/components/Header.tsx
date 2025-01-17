@@ -1,4 +1,5 @@
 "use client";
+import Form from "./Form";
 import Title from "./Title";
 import Link from "next/link";
 
@@ -16,21 +17,7 @@ export default function Header() {
 				</ul>
 			</nav>
 			<Title level={1}>Meteo Widgets</Title>
-			<form
-				action="POST"
-				className="flex p-4 gap-1"
-				onSubmit={(event) => {
-					event.preventDefault();
-					const myFormData = new FormData(event.currentTarget);
-					console.log(myFormData);
-
-					const city = myFormData.get("city") as string;
-					console.log(city);
-				}}
-			>
-				<label htmlFor="city">Ville</label>
-				<input type="text" placeholder="ajouter une ville" />
-			</form>
+			<Form />
 		</header>
 	);
 }
